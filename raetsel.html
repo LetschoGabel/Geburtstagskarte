@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Geburtstagsrätsel</title>
+    <style>
+        body {
+            background: #111;
+            color: #0f0;
+            font-family: Consolas, monospace;
+            text-align: center;
+            padding-top: 80px;
+        }
+        input, button {
+            padding: 10px;
+            background: #222;
+            border: 1px solid #0f0;
+            color: #0f0;
+            font-family: Consolas, monospace;
+            margin-top: 20px;
+        }
+        #qr {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎉 Willkommen zum Geburtstagsrätsel 🎉</h1>
+    <p>Gib die richtige Zahl ein, um das geheime Geschenk freizuschalten.</p>
+
+    <input id="answer" placeholder="Lösung eingeben...">
+    <button onclick="check()">Prüfen</button>
+
+    <div id="qr"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <script>
+        function check() {
+            let val = document.getElementById('answer').value.trim();
+            if (val === "24") {
+                let qr = new QRious({
+                    value: "https://deine-url-hier.com",
+                    size: 220
+                });
+                document.getElementById('qr').innerHTML = "<h2>✔ Richtige Antwort!</h2><p>Hier ist dein Code:</p><br>";
+                let img = document.createElement("img");
+                img.src = qr.toDataURL();
+                document.getElementById('qr').appendChild(img);
+            } else {
+                document.getElementById('qr').innerHTML = "<p>❌ Falsche Antwort.</p>";
+            }
+        }
+    </script>
+
+</body>
+</html>
