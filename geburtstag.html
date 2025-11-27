@@ -2,6 +2,7 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Wichtig für Handy -->
     <title>Alles Gute Papa!</title>
     <style>
         body {
@@ -9,18 +10,37 @@
             color: #0ff;
             font-family: Consolas, monospace;
             text-align: center;
-            padding-top: 80px;
+            padding: 40px 20px;
         }
+
         h1 {
-            font-size: 40px;
+            font-size: 32px;
+            margin-bottom: 20px;
         }
+
+        p {
+            font-size: 18px;
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+
         .run {
-            font-size: 120px;
+            font-size: 100px;
             margin-top: 20px;
         }
-        p {
-            margin-top: 30px;
-            font-size: 20px;
+
+        /* 📱 Handy-Optimierung */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 26px;
+            }
+            p {
+                font-size: 16px;
+            }
+            .run {
+                font-size: 120px;
+                margin-top: 30px;
+            }
         }
     </style>
 </head>
@@ -32,10 +52,10 @@
     <div class="run">👟</div>
 
     <p>
-        Dieses Jahr bei der 24-Stunden-WM – 5er in der Altersgruppe. WOW.  
-        Mögen deine nächsten 24 Jahre genauso startk sein wie die letzten.
+         Dieses Jahr bei der 24-Stunden-WM – 5er in der Altersgruppe. WOW. 
+	Mögen deine nächsten 24 Jahre genauso startk sein wie die letzten.
     </p>
 
-    <p>Alles Gute, Leon dein Lieblingskind :)</p>
+    <p>Alles Gute, dein Lieblingskind :)</p>
 </body>
 </html>
